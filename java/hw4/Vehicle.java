@@ -13,10 +13,37 @@ import java.util.*; // for Collections.sort() and ArrayList
 
 class Vehicle {
 				// private fields
+        private int currentSpeed;
+        private int currentDirection;
+        private String ownerName;
+        private int carID; 
 				// public fields
+        public static int nextID = 0;
 				// constructors
+        Vehicle(){
+          nextID++;
+        }
+        Vehicle(String ownerName){
+          this.ownerName = ownerName;
+        }
 				// public methods
+        public static int highestID(){
+          return nextID;
+        }
+        public int getCurrentSpeed(){
+          return currentSpeed;
+        }
+        public int getCurrentDirection(){
+          return currentDirection;
+        }
+        public String getOwnerName(){
+          return ownerName;
+        }
+        public int getCarID(){
+          return carID;
+        }
 				// private methods if you need
+
 }
 
 class VehicleTest {
@@ -80,6 +107,12 @@ class PassengerVehicle extends Vehicle
     // in a descending order
 
   } // end of main
+
+  @Override
+  public int compareTo(PassengerVehicle o) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
+  }
 
 } // end of class PassengerVehicle
 
