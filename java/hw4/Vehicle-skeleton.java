@@ -6,7 +6,7 @@
 
    Student Name: Blake Dejohn
    Student UIN: 531002472
-   Acknowledgements:
+   Acknowledgements: Section 1.6 of The Java Programming Language, 4th Edition
 */
 
 import java.util.*; // for Collections.sort() and ArrayList
