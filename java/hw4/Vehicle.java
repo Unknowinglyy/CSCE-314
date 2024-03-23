@@ -6,7 +6,7 @@
 
    Student Name: Blake Dejohn
    Student UIN: 531002472
-   Acknowledgements: Section 1.6 of The Java Programming Language, 4th Edition, used this for the turn function overloading: https://stackoverflow.com/questions/58860034/having-methods-take-constant-parameters-the-java-programming-language-4th-editi
+   Acknowledgements: Section 1.6 of "The Java Programming Language, 4th Edition", used this for the turn function overloading: https://stackoverflow.com/questions/58860034/having-methods-take-constant-parameters-the-java-programming-language-4th-editi
 */
 
 import java.util.*; // for Collections.sort() and ArrayList
