@@ -25,6 +25,11 @@ class SubsetOutputFib {
             System.out.println("Could not parse string inputs into ints");
             return;
         }
+        //error checking for zero
+        if(be == 0 || en == 0){
+            System.out.println("Zero can not be used for either number...");
+            return;
+        }
         //error checking to see if either of the inputs are negative
         if(be < 0 || en < 0){
             System.out.println("Either one or both of your numbers are negative. Fixing this by converting them to their absolute values.");
