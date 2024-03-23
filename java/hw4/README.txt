@@ -1,6 +1,7 @@
 Problem 1
 This document serves as the answer to problem 1.
 (used Java version 17 for this hw)
+(Can also find all relevant code here: https://github.com/Unknowinglyy/CSCE314/tree/main/java/hw4)
 
 Problem 2
 
