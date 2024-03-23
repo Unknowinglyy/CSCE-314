@@ -1,3 +1,13 @@
+/* CSCE 314 [Sections 595, 596, 597] Programming Languages, Spring 2024
+   Homework Assignment 4 
+   Skeleton for Problems 4-9
+   Written by Hyunyoung Lee for CSCE 314 Students
+
+   Student Name: Blake Dejohn
+   Student UIN: 531002472
+   Acknowledgements: Section 1.6 of The Java Programming Language, 4th Edition, used this for the turn function overloading: https://stackoverflow.com/questions/58860034/having-methods-take-constant-parameters-the-java-programming-language-4th-editi
+*/
+
 public class Fibonacci {
     //unused main method
         public static void main(String[] args) {
@@ -43,6 +53,7 @@ class SubsetOutputFib {
         //error checking to see if the beginning number is greater than the end
         if(be > en){
             System.out.println("Your beginning number is larger than your ending number. Fixing this by switching them.");
+            //swapping beginning and ending number
             int temp = be;
             be = en;
             en = temp;

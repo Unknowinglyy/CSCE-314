@@ -6,7 +6,7 @@
 
    Student Name: Blake Dejohn
    Student UIN: 531002472
-   Acknowledgements: Section 1.6 of The Java Programming Language, 4th Edition, used this for function overloading: https://stackoverflow.com/questions/58860034/having-methods-take-constant-parameters-the-java-programming-language-4th-editi
+   Acknowledgements: Section 1.6 of The Java Programming Language, 4th Edition, used this for the turn function overloading: https://stackoverflow.com/questions/58860034/having-methods-take-constant-parameters-the-java-programming-language-4th-editi
 */
 
 import java.util.*; // for Collections.sort() and ArrayList
@@ -90,6 +90,7 @@ class Vehicle {
         public String toString(){
           return "The current vehicle is owned by " + this.ownerName + ", has ID number " + this.carID + ", is going at a speed of " + this.currentSpeed + " mph, and is heading in a direction that is " + this.currentDirection + " degrees from North.";
         }
+        //use the already created setter method for both speed functions
         public void changeSpeed(int speed){
           setCurrentSpeed(speed);
         }
@@ -242,6 +243,7 @@ class PassengerVehicle extends Vehicle
   }
 
   /* set methods for the private fields */
+  //seats can not be negative so make sure inputted number gives a positive result with Math.abs()
   public void setTotalSeats(int seats){
     this.totalSeats = Math.abs(seats);
   }
@@ -251,6 +253,7 @@ class PassengerVehicle extends Vehicle
       this.occupiedSeats = Math.abs(seats);
     }
     else{
+      //printing error message and simply setting occupied seats to their maximum allowed amount
       System.out.println("You can not occupy that many seats. Only letting the maximum amount of people in the car.");
       this.occupiedSeats = this.totalSeats;
     }
