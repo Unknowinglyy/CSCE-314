@@ -1,4 +1,5 @@
 public class Fibonacci {
+    //unused main method
         public static void main(String[] args) {
             System.out.println("test");
     }
@@ -76,6 +77,7 @@ class SubsetOutputFib {
 
 class ImprovedFibonacci {
     static final int MAX_INDEX = 9;
+    //creating an array that is as big as needed for 9 fibonacci numbers
     public static FibonacciObject[] fibonacciArray = new FibonacciObject[MAX_INDEX];
     /**
     * Print out the first few Fibonacci numbers,
@@ -85,23 +87,29 @@ class ImprovedFibonacci {
         int lo = 1;
         int hi = 1;
         boolean even;
+        //creating the first fibonacci number object which has value 1 and is not even
         FibonacciObject object1 = new FibonacciObject(1, false);
         fibonacciArray[0] = object1;
         for (int i = 2; i <= MAX_INDEX; i++) {
         if (hi % 2 == 0){
+            //set the boolean variable to true or false based on if it is even
             even = true;
         }
         else{
             even = false;
         }
+        //creating an object for the current fibonacci number in the loop, giving it the value denoted by the hi variable and the variable that denotes if it is even or not
         FibonacciObject object2 = new FibonacciObject(hi, even);
+        //setting the object at the i-1 index to the newly created fibonacci object
         fibonacciArray[i-1] = object2;
+        //updating the fibonacci number
         hi = lo + hi;
         lo = hi - lo;
         }
         //proving the array was created correctly
         System.out.println("Now printing array of Fibonacci numbers");
         System.out.println();
+        //going through the array and printing out multiple things like which fibonacci number it is, what is its value, and if it is even or not
         for(int i = 0; i < fibonacciArray.length; i++){
             System.out.println("fibonacci number " + (i+1) + ": " + fibonacciArray[i].value);
             String answer;
@@ -116,11 +124,11 @@ class ImprovedFibonacci {
         }
     }
 }
-
+//class definition of a fibonacci object. Overall, it just needs to store the fibonacci value and if that value is even or not
 class FibonacciObject{
     public int value;
     public boolean isEven;
-
+    //constructor for fibonacci object. Simply sets its variable fields to the passed in values.
     FibonacciObject(int value, boolean even){
         this.value = value;
         this.isEven = even;
