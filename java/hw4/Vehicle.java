@@ -190,7 +190,7 @@ class VehicleTest {
                 System.out.println("Turning car9 by +5 degrees");
                 car9.turn(5);
                 System.out.println("Car9's current direction: " + car9.getCurrentDirection());
-                System.out.println("Now turning car9 by left");
+                System.out.println("Now turning car9 left");
                 car9.turn(Vehicle.TURN_LEFT);
                 System.out.println("Car9's current direction: " + car9.getCurrentDirection());
                 System.out.println("Now undoing the last turn by turning right");
