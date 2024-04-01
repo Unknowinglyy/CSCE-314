@@ -2,8 +2,8 @@
 /* Skeleton provided by Hyunyoung Lee
    For CSCE 314 [Sections 595, 596, 597] Spring 2024, Assignment 5 Problem 2
  
-   Student Name:
-   UIN:
+   Student Name: Blake Dejohn
+   UIN: 531002472
    Acknowledgements:
 */
 
