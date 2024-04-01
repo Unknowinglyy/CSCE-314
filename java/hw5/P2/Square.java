@@ -8,6 +8,7 @@
 */
 
 import java.lang.Math;
+import java.util.Objects;
 
 class Square extends Shape {
   private double side; // side is the side length
@@ -17,7 +18,7 @@ class Square extends Shape {
   // (for the side length).
   public Square(Point p0, double side){
     //implement the constructor
-    this.position = p0;
+    super(p0);
     this.side = side;
     this.area = this.area();
   }
@@ -45,7 +46,7 @@ class Square extends Shape {
     //first find the hash of the point object
     int pointHash = this.position.hashCode();
     //then find the hash of the side length and the previous hash
-    return Object.hash(pointHash, side);
+    return Objects.hash(pointHash, side);
   }
 
   @Override

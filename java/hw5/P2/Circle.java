@@ -8,6 +8,7 @@
 */
 
 import java.lang.Math;
+import java.util.Objects;
 
 class Circle extends Shape {
   private double radius;
@@ -17,7 +18,7 @@ class Circle extends Shape {
   // (for the radius).
   public Circle(Point p0, double r)
   {  // implement the constructor
-    this.position = p0;
+    super(p0);
     this.radius = r;
     this.area = this.area();
   }
@@ -45,7 +46,7 @@ class Circle extends Shape {
     //first get the hash from the point object
     int pointHash = this.position.hashCode();
     //then get the hash from the radius and the previous hash
-    return Object.hash(pointHash, radius);
+    return Objects.hash(pointHash, radius);
   }
 
   @Override
