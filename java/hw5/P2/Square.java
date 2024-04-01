@@ -59,6 +59,7 @@ class Square extends Shape {
   public String toString()
   {  // implement this method and explain your implementation
     //returning a string representation of the Square object
+    //TODO: add the area to the string representation?
     return "The square is at position " + this.position + " with a side length of " + this.side;
   }
 } // end of class Square
