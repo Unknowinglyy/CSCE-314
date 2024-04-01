@@ -48,7 +48,7 @@ public final class Point {
   public String toString()
   {  // implement the method and explain your implementation 
     //Making a string representation of the Point object
-    return "Point: (" + x + ", " + y + ")";
+    return "(" + x + ", " + y + ")";
   }
 } // end of class Point
 
