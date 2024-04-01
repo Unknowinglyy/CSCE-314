@@ -8,7 +8,7 @@
 */
 
 abstract class Shape implements Comparable<Shape> {
-  public Point position;
+  public Point position;  
   public double area;
     
   // constructor that sets position as the Point passed as an argument

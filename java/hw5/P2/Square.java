@@ -11,6 +11,7 @@ import java.lang.Math;
 
 class Square extends Shape {
   private double side; // side is the side length
+  //gets position and area from shape class
 
   // constructor that accepts a Point (for position) and a double
   // (for the side length).
