@@ -15,8 +15,8 @@ class Square extends Shape {
 
   // constructor that accepts a Point (for position) and a double
   // (for the side length).
-  public Square(Point p0, double side)
-  {  // implement the constructor
+  public Square(Point p0, double side){
+    //implement the constructor
     this.position = p0;
     this.side = side;
     this.area = this.area();
