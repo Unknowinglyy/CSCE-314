@@ -59,8 +59,7 @@ class Circle extends Shape {
   @Override
   public String toString()
   {  // implement this method and explain your implementation
-    //TODO: add the area to the string representation?
-    return "The circle is at position " + this.position + " with a radius of " + this.radius;
+    return "The circle is at position " + this.position + " with a radius of " + this.radius + " and has an area of " + this.area();
   }
 } // end of class Circle
 

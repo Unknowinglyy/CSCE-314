@@ -119,8 +119,14 @@ public class Main {
   // Task 10.
 		// Sort the shapes according to their area and output them nicely in 
   // an ascending order of area 
+  Arrays.sort(shapes);
+  out.println("\nThe shapes sorted in ascending order of area are:\n");
+  for(Shape shape : shapes){
+    out.println(shape);
+  }
 
   // output the total area of all the shapes
+  out.println("\nThe total area of all the shapes is: " + TotalAreaCalculator.calculate(shapes));
 
   } // end of main()
 } // end of class Main

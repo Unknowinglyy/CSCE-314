@@ -56,7 +56,6 @@ abstract class Shape implements Comparable<Shape> {
       //denotes equal to
       return 0;
     }
-
   }
 } // end of class Shape
 
