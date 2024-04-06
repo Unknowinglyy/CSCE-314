@@ -13,10 +13,47 @@ public class CellTest {
 
   // 15 points for the three methods: int_sum, num_sum, print
   // implement int_sum
+  public static int int_sum(Cell<Integer> list) {
+    int sum = 0;
+    if(list == null){
+      return sum;
+    }
+    else{
+      for(Integer num: list){
+        sum += num;
+      }
+      return sum;
+    }
+  }
 
   // implement num_sum
+  public static double num_sum(Cell<? extends Number> list) {
+    double sum = 0;
+    if(list == null){
+      return sum;
+    }
+    else{
+      //cell has atleast a value of type Number
+      for(Number n: list){
+        sum += n.doubleValue();
+      }
+      return sum;
+    }
+  }
 
   // implement print
+  public static void print(Cell<?> list) {
+    if(list == null){
+      System.out.println("Linked list is empty.");
+    }
+    else{
+      //cell has atleast a value of type Object
+      for(Object o: list){
+        System.out.print(o + " ");
+      }
+      System.out.println();
+    }
+  }
 
 	
   // Feel free to "expand" the main method but do not delete whatever provided 
