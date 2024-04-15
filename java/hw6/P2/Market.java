@@ -1,8 +1,8 @@
 
 /* Written by Hyunyoung Lee for CSCE 314 Students Homework 6 Problem 2 
 
-   Student Name:
-   UIN:
+   Student Name: Blake Dejohn
+   UIN: 531002472
    Acknowledgements:
 */
 
@@ -12,18 +12,32 @@ public class Market<T> {
   List<T> stock; // stock of the market
 
   public Market() { stock = new java.util.LinkedList<T>(); }
-
+  //adds to the stock
   void sell(T item) {
     // implement this method
+    stock.add(item);
   }
+  //removes from the stock
   public T buy() {
     // implement this method
+    //buys the first item in the stock
+    T item = stock.remove(0);
+    return item;
   }
-  void sell(List<T> items) { // modify the parameter type
+  //in the fruit market, you can sell a collection of fruits or anything that extends fruit
+  void sell(Collection<? extends T> items) {
     // implement this method
+    for (T item : items) {
+      stock.add(item);
+    }
   }
   void buy(int n, List<T> items) { // modify the parameter type
     // implement this method
+    //takes the first n items from the stock
+    //adds them to the items list
+    for (int i = 0; i < n; i++) {
+      items.add(stock.remove(0)); //remove from stock then add to items
+    }
   }
 } // end of class Market
 
@@ -42,17 +56,19 @@ class Main {
 
   public static void main(String args[]) {
     Market<Fruit> farmersmarket = new Market<Fruit> ();
-
+    //double ended queue
     Deque<Fruit> fruits = new ArrayDeque<Fruit>();
     fruits.addFirst(new Gala());
     fruits.addFirst(new Apple());
-    //Fruit a = fruits.remove();
+    //Fruit a = fruits.remove(); //removes the first element of the deque 
     //if (a instanceof Apple) System.out.println("a is Apple");
 
     Vector<Apple> apples = new Vector<Apple>();
     apples.addElement(new Apple());
     apples.addElement(new Apple());
     apples.addElement(new Gala());
+
+    //add test of buy method (buy one item)
 
     farmersmarket.sell(fruits);
     farmersmarket.sell(apples);
