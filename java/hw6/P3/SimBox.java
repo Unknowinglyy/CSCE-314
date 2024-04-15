@@ -47,16 +47,24 @@ class SimBox implements Runnable {
 
   public void stop() {
     // make it so that this Runnable will stop
+    this.stop = true;
   }
 
   public void send(String recipient, String msg) {
     // add a message to the shared message queue (messages)
+    this.messages.add(new Message(this.myId, recipient, msg));
     // you will have to synchronize the message queue
   }
 
   public List<String> retrieve() {
     // return the contents of myMessages
+    List<String> results = new ArrayList<String>();
+    for(Message m : myMessages){
+      results.add("From " + m.sender + " to " + m.recipient + " " + m.msg);
+    }
     // and empty myMessages
+    myMessages.clear();
+    return results;
     // you will have to synchronize myMessages
     // each message should be in the following format:
     //   From (the sender) to (the recipient) (actual message)
