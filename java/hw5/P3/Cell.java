@@ -29,22 +29,25 @@ public final class Cell<E> implements Iterable<E>{ // modify this header
 		@Override
   public CellIterator<E> iterator() {
 		// implement this method and explain
+    //return a new CellIterator object with the current cell as the starting point
     return new CellIterator<E>(this);
 		}
 
   // getter and setter methods for the private fields
   public E getVal() {
-  // implement this method
+    // implement this method
     return this.elem;
-		} 
+	} 
   public void setVal(E v) {
   // implement this methodn
     this.elem = v;
-		} 
+	} 
   public Cell<E> getNext() {
   // implement this method
+  //try to access the next element in the linked list, if it doesn't exist, throw a NoSuchElementException
     return this.next;
-		} 
+  }
+
   public void setNext(Cell<E> node) {
 		// implement this method
     this.next = node;
@@ -59,6 +62,7 @@ public final class Cell<E> implements Iterable<E>{ // modify this header
     // (3 points) constructor
     public CellIterator (Cell<E> n) {
 				// implement this constructor
+        this.p = n;
 				}
 
     // (5+10=15 points) two methods to implement the Iterator interface
@@ -66,14 +70,19 @@ public final class Cell<E> implements Iterable<E>{ // modify this header
 				@Override
     public boolean hasNext() {
 				// implement this method and explain
-        return true;
+        // if the next cell is not null, then there is a next element
+        return p != null;
 				} 
 
     // (10 points) next()
 				@Override
     public E next() {
 				// implement this method and explain
-        return this.p.getVal();
+        E value = p.getVal(); // get the value of the current cell
+        //move the cursor to the next cell
+        p = p.getNext();
+        //return the value of the current cell
+        return value;
 				}    
 
   } // end of CellIterator

@@ -2,6 +2,8 @@
     "java.project.sourcePaths": [
         "java\\testing",
         "java\\hw4",
-        "java\\hw5\\P2"
+        "java\\hw5\\P2",
+        "java\\hw5\\P3",
+        "java\\hw5\\P4"
     ]
 }
