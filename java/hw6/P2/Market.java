@@ -3,7 +3,10 @@
 
    Student Name: Blake Dejohn
    UIN: 531002472
-   Acknowledgements:
+   Acknowledgements: 
+   Oracle Java Documentation on wildcards: https://docs.oracle.com/javase/tutorial/extra/generics/wildcards.html 
+   Lecture vidoes on Java Generics created by Dr. Hyunyoung Lee (Videos 11.1 - 11.4 on Canvas)
+
 */
 
 import java.util.*;
@@ -14,17 +17,15 @@ public class Market<T> {
   public Market() { stock = new java.util.LinkedList<T>(); }
   //adds to the stock
   void sell(T item) {
-    // implement this method
     stock.add(item);
   }
   //removes from the stock
   public T buy() {
-    // implement this method
     //buys the first item in the stock
     T item = stock.remove(0);
     return item;
   }
-  //in the fruit market, you can sell a collection of fruits or anything that extends fruit
+  //e.g. a Market that contains Fruit can sell any collection that contains a type that extends Fruit!
   void sell(Collection<? extends T> items) {
     // implement this method
     for (T item : items) {
@@ -32,14 +33,14 @@ public class Market<T> {
     }
   }
   void buy(int n, List<T> items) { // modify the parameter type
-    // implement this method
     //takes the first n items from the stock
     //adds them to the items list
     for (int i = 0; i < n; i++) {
       items.add(stock.remove(0)); //remove from stock then add to items
     }
   }
-} // end of class Market
+} 
+// end of class Market
 
 
 // Study class Main. You don't need to modify class Main
