@@ -83,8 +83,8 @@ class SimBox implements Runnable {
     }
     // and empty myMessages
     myMessages.clear();
-    //unlocks when done
     return results;
+    //unlocks when done
   }
 
   public void run() {

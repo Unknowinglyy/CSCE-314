@@ -5,7 +5,10 @@
    UIN: 531002472
    Acknowledgements: 
    Oracle Java Documentation on wildcards: https://docs.oracle.com/javase/tutorial/extra/generics/wildcards.html 
+
    Lecture vidoes on Java Generics created by Dr. Hyunyoung Lee (Videos 11.1 - 11.4 on Canvas)
+
+   Collections in Java (useful for finding out exactly how the collection types relate to one another): https://www.javatpoint.com/collections-in-java#:~:text=Java%20Collection%20means%20a%20single,HashSet%2C%20LinkedHashSet%2C%20TreeSet
 
 */
 
@@ -32,7 +35,10 @@ public class Market<T> {
       stock.add(item);
     }
   }
-  void buy(int n, List<T> items) { // modify the parameter type
+  //basically says that you can have any type of collection as your basket
+  //however, the items in your basket must be able to carry any type of item that is contained in the market (stock)
+  //T is guaranteed to be a superclass of the items in the stock since the only items that can be added to the stock are of type T or a subclass of T
+  void buy(int n, Collection<T> items) {
     //takes the first n items from the stock
     //adds them to the items list
     for (int i = 0; i < n; i++) {
@@ -47,6 +53,7 @@ public class Market<T> {
 class Main {
   // three static nested classes expressing example subclass hierarchy
   // Gala <: Apple <: Fruit
+  // Gala is a type of Apple and Apple is a type of Fruit
   static class Fruit { public String toString () { return "Fruit"; } }
   static class Apple extends Fruit {
                        public String toString () { return "Apple"; }
@@ -57,7 +64,7 @@ class Main {
 
   public static void main(String args[]) {
     Market<Fruit> farmersmarket = new Market<Fruit> ();
-    //double ended queue
+    //double ended queue (never seen before, interesting...)
     Deque<Fruit> fruits = new ArrayDeque<Fruit>();
     fruits.addFirst(new Gala());
     fruits.addFirst(new Apple());
@@ -69,21 +76,38 @@ class Main {
     apples.addElement(new Apple());
     apples.addElement(new Gala());
 
-    //add test of buy method (buy one item)
-
+    //tests single sell and bulk sell (also tests that you can sell with any type of collection with the correct type restrictions)
     farmersmarket.sell(fruits);
     farmersmarket.sell(apples);
     farmersmarket.sell(new Fruit());
     farmersmarket.sell(new Gala());
 
+    //test of buy bulk method
     ArrayList<Fruit> mybasket = new ArrayList<Fruit>();
 
     farmersmarket.buy(6, mybasket);
 
+    //test of buy single method
+    Fruit extra = farmersmarket.buy();
+
+    //also test that you can use any type of collection as your basket (as long as the items in the basket can hold any type of item that is in the stock)
+    farmersmarket.sell(new Apple());
+    farmersmarket.sell(new Gala());
+    farmersmarket.sell(new Fruit());
+    Set<Fruit> mybasket2 = new HashSet<Fruit>();
+    farmersmarket.buy(3,mybasket2);
+    
+
     // print out what you bought
     System.out.println("Here's what I bought");
     for (Fruit e : mybasket) System.out.println(e);
+    //print out my tests
+    System.out.println("\nHere's what my friend bought");
+    for (Fruit e : mybasket2) System.out.println(e);
+    System.out.println("\nI bought this on the way out too: " + extra +"\n");
     System.out.println("Enjoy!");
-  } // end of main
-} // end of class Main
+  } 
+  // end of main
+} 
+// end of class Main
 
