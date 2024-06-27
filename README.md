@@ -1,4 +1,4 @@
-# CSCE314
+# CSCE 314
 Java + Haskell
 
 Haskell is a pure, lazy, functional programming language. It is based on lambda calculus and uses functions as its primary means of computation. 
